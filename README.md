@@ -1,18 +1,12 @@
-# Gestion de Mesas para Restaurantes
+# Gestión de Mesas para Restaurantes
 
-Este proyecto contiene un programa sencillo en Python para gestionar las reservas de un restaurante. Permite definir la cantidad de mesas, las sillas por mesa y crear o liberar reservas por horario.
-
-## Requisitos
-
-- Python 3
+Esta versión ofrece una aplicación web sencilla para administrar las reservas de las mesas de un restaurante. Permite configurar el número de mesas y la cantidad de sillas por mesa, así como crear y liberar reservas por horario.
 
 ## Uso
 
-Ejecute el programa:
+1. Abra `index.html` en un navegador moderno.
+2. Configure la cantidad de mesas y las sillas de cada una.
+3. Utilice el formulario para crear reservas y el botón `X` para liberarlas.
+4. Las reservas se almacenan en el navegador (localStorage) y se mantendrán al recargar la página.
 
-```bash
-python gestion_mesas.py
-```
-
-Siga las instrucciones en pantalla para crear reservas, liberar mesas o consultar el estado actual.
-
+El diseño utiliza HTML, CSS y JavaScript simples, por lo que puede alojarse en cualquier servidor estático.
