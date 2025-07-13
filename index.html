@@ -9,34 +9,73 @@
 <body>
     <div class="container">
         <h1>Gestión de Mesas</h1>
-        <section id="configuracion">
-            <h2>Configurar Restaurante</h2>
+
+        <div id="stepper" class="stepper">
+            <div class="step active">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+            <div class="step">4</div>
+            <div class="step">5</div>
+        </div>
+
+        <section id="step1" class="step-content active">
+            <h2>Paso 1: Cantidad de Mesas</h2>
             <div class="form-group">
                 <label for="num-mesas">Cantidad de mesas:</label>
-                <input type="number" id="num-mesas" min="1" value="1">
-                <button id="crear-mesas">Crear</button>
+                <input type="number" id="num-mesas" min="1">
             </div>
-            <div id="sillas-config"></div>
+            <div class="buttons">
+                <button id="next1" disabled>Siguiente</button>
+            </div>
         </section>
-        <section id="reservas" class="oculto">
-            <h2>Reservas</h2>
-            <form id="form-reserva">
-                <div class="form-group">
-                    <label for="mesa-select">Mesa:</label>
-                    <select id="mesa-select"></select>
-                </div>
-                <div class="form-group">
-                    <label for="inicio">Inicio:</label>
-                    <input type="time" id="inicio" required>
-                </div>
-                <div class="form-group">
-                    <label for="fin">Fin:</label>
-                    <input type="time" id="fin" required>
-                </div>
-                <button type="submit">Reservar</button>
-            </form>
-            <div id="mesas"></div>
+
+        <section id="step2" class="step-content">
+            <h2>Paso 2: Configurar Mesas</h2>
+            <div id="tables-config"></div>
+            <div class="buttons">
+                <button id="back2">Atrás</button>
+                <button id="next2" disabled>Siguiente</button>
+            </div>
         </section>
+
+        <section id="step3" class="step-content">
+            <h2>Paso 3: Reservar</h2>
+            <div class="form-group">
+                <label for="mesa-select">Mesa:</label>
+                <select id="mesa-select"></select>
+            </div>
+            <div class="form-group">
+                <span>Inicio:</span>
+                <div id="start-times" class="time-grid"></div>
+            </div>
+            <div class="form-group">
+                <span>Fin:</span>
+                <div id="end-times" class="time-grid"></div>
+            </div>
+            <div class="buttons">
+                <button id="back3">Atrás</button>
+                <button id="next3" disabled>Siguiente</button>
+            </div>
+        </section>
+
+        <section id="step4" class="step-content">
+            <h2>Paso 4: Layout</h2>
+            <div id="layout" class="layout"></div>
+            <div class="buttons">
+                <button id="back4">Atrás</button>
+                <button id="next4">Siguiente</button>
+            </div>
+        </section>
+
+        <section id="step5" class="step-content">
+            <h2>Paso 5: Confirmar</h2>
+            <div id="summary"></div>
+            <div class="buttons">
+                <button id="back5">Atrás</button>
+                <button id="finish">Confirmar</button>
+            </div>
+        </section>
+
     </div>
     <script src="script.js"></script>
 </body>
