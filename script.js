@@ -13,6 +13,8 @@ function createTableConfig(n) {
     const container = document.getElementById('sillas-config');
     container.innerHTML = '';
     for (let i = 1; i <= n; i++) {
+        const group = document.createElement('div');
+        group.className = 'form-group';
         const label = document.createElement('label');
         label.textContent = `Sillas mesa ${i}:`;
         const input = document.createElement('input');
@@ -20,8 +22,9 @@ function createTableConfig(n) {
         input.min = 1;
         input.value = 4;
         input.id = `sillas-${i}`;
-        container.appendChild(label);
-        container.appendChild(input);
+        group.appendChild(label);
+        group.appendChild(input);
+        container.appendChild(group);
     }
     const btn = document.createElement('button');
     btn.textContent = 'Guardar configuración';
@@ -34,8 +37,10 @@ function createTableConfig(n) {
         save();
         showReservations();
     });
-    container.appendChild(document.createElement('br'));
-    container.appendChild(btn);
+    const btnWrapper = document.createElement('div');
+    btnWrapper.className = 'form-group';
+    btnWrapper.appendChild(btn);
+    container.appendChild(btnWrapper);
 }
 
 function showReservations() {
